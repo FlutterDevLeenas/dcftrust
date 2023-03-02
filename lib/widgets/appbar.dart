@@ -1,5 +1,5 @@
 import 'package:dcftrust/constants/header.dart';
-import 'package:dcftrust/controllers/headerController.dart';
+import 'package:dcftrust/controllers/headercontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
@@ -16,7 +16,6 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var route = ModalRoute.of(cont);
     return AppBar(
       elevation: 0.0,
       toolbarHeight: 100.0,
@@ -52,10 +51,7 @@ class Header extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    var prit = route!.settings.name;
-                    print(prit);
                     Get.rootDelegate.toNamed('/');
-                    // headerController.changeActiveHome();
                   },
                   onHover: (value) {
                     headerController.changeHoverHome(value);
@@ -65,10 +61,7 @@ class Header extends StatelessWidget {
                 ),
                 InkWell(
                     onTap: () {
-                      var prit = route!.settings.name;
-                      print(prit);
                       Get.rootDelegate.toNamed('/about');
-                      // headerController.changeActiveAbout();
                     },
                     onHover: (value) {
                       headerController.changeHoverAbout(value);
@@ -79,10 +72,7 @@ class Header extends StatelessWidget {
                         headerController.about)),
                 InkWell(
                     onTap: () {
-                      var prit = route!.settings.name;
-                      print(prit);
                       Get.rootDelegate.toNamed('/cause');
-                      // headerController.changeActiveCause();
                     },
                     onHover: (value) {
                       headerController.changeHoverCause(value);
@@ -93,10 +83,7 @@ class Header extends StatelessWidget {
                         headerController.cause)),
                 InkWell(
                   onTap: () {
-                    var prit = route!.settings.name;
-                    print(prit);
                     Get.rootDelegate.toNamed('/projects');
-                    // headerController.changeActiveProjects();
                   },
                   onHover: (value) {
                     headerController.changeHoverProject(value);
@@ -108,10 +95,7 @@ class Header extends StatelessWidget {
                 ),
                 InkWell(
                     onTap: () {
-                      var prit = route!.settings.name;
-                      print(prit);
                       Get.rootDelegate.toNamed('/blog');
-                      // headerController.changeActiveBlog();
                     },
                     onHover: (value) {
                       headerController.changeHoverBlog(value);
@@ -122,10 +106,7 @@ class Header extends StatelessWidget {
                         headerController.blog)),
                 InkWell(
                   onTap: () {
-                    var prit = route!.settings.name;
-                    print(prit);
                     Get.rootDelegate.toNamed('/contact');
-                    // headerController.changeActiveContact();
                   },
                   onHover: (value) {
                     headerController.changeHoverContact(value);

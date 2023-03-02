@@ -1,4 +1,4 @@
-import 'package:dcftrust/controllers/headerController.dart';
+import 'package:dcftrust/controllers/headercontroller.dart';
 import 'package:dcftrust/routing/route.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -1,5 +1,5 @@
 import 'package:dcftrust/constants/responsive.dart';
-import 'package:dcftrust/controllers/headerController.dart';
+import 'package:dcftrust/controllers/headercontroller.dart';
 import 'package:dcftrust/pages/Home/widget/home_large.dart';
 import 'package:dcftrust/pages/Home/widget/home_medium.dart';
 import 'package:dcftrust/pages/Home/widget/home_small.dart';
@@ -19,7 +19,6 @@ class _HomeState extends State<Home> {
   @override
   void initState() {
     headerController.changeActiveHome();
-
     super.initState();
   }
 

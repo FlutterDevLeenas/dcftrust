@@ -10,7 +10,7 @@ import 'package:get/get.dart';
 appRoutes() => [
       GetPage(
         name: '/',
-        page: () => Home(),
+        page: () => const Home(),
         transition: Transition.fadeIn,
         transitionDuration: const Duration(milliseconds: 100),
       ),

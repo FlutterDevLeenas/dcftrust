@@ -1,4 +1,4 @@
-import 'package:dcftrust/controllers/headerController.dart';
+import 'package:dcftrust/controllers/headercontroller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
