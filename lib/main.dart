@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       getPages: appRoutes(),
       routerDelegate: AppRouterDelegate(),
       theme: ThemeData(
+        drawerTheme: const DrawerThemeData(shadowColor: Colors.transparent),
         splashColor: Colors.transparent,
         highlightColor: Colors.transparent,
         buttonTheme: ButtonThemeData(

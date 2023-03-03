@@ -18,3 +18,18 @@ Padding headerItem(String text, bool hover, bool active) {
     ),
   );
 }
+
+Padding headerItemDrawer(String text, bool hover, bool active) {
+  return Padding(
+    padding: const EdgeInsets.only(bottom: 20),
+    child: Container(
+      padding: const EdgeInsets.all(10),
+      color: hover || active ? Colors.grey.shade300 : Colors.transparent,
+      child: Text(
+        text,
+        style: TextStyle(
+            fontSize: 18, color: hover || active ? Colors.black : null),
+      ).animate().fadeIn(duration: 1000.ms, delay: 0.ms, curve: Curves.easeOut),
+    ),
+  );
+}
