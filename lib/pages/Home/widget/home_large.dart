@@ -34,10 +34,192 @@ class HomeLarge extends StatelessWidget {
           const Section3(),
           const Section4(),
           Container(
-            height: 500,
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/bg-white-02.jpg'),
+                  fit: BoxFit.cover),
+            ),
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 40,
+                ),
+                const Text(
+                  'OUR WORK',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.black87),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                Text(
+                  'What We Focus On',
+                  style: GoogleFonts.lato(
+                      fontSize: 40,
+                      fontWeight: FontWeight.w900,
+                      color: Colors.black),
+                ),
+                const SizedBox(
+                  height: 40,
+                ),
+                Wrap(
+                  alignment: WrapAlignment.center,
+                  runSpacing: 20,
+                  spacing: 20,
+                  children: const [
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Support for education &\nentrepreneurship',
+                      color: Colors.green,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text:
+                          'Protection of abandoned elderly &\norphaned children',
+                      color: Colors.purple,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text:
+                          'Upliftment of destitutes &\nsocially disadvantaged',
+                      color: Colors.orangeAccent,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Preservation of biodiversity',
+                      color: Colors.green,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Conservation of natural\nenvironment',
+                      color: Colors.purple,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Employment generation',
+                      color: Colors.orangeAccent,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Agriculture development',
+                      color: Colors.green,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Women development',
+                      color: Colors.purple,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Disabled-persons\ndevelopment',
+                      color: Colors.orangeAccent,
+                    ),
+                    OurWork(
+                      link: 'assets/child_color.jpg',
+                      text: 'Healthcare & Rehabilitation\npromotion',
+                      color: Colors.green,
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class OurWork extends StatelessWidget {
+  const OurWork({
+    super.key,
+    required this.text,
+    required this.link,
+    required this.color,
+  });
+  final String text;
+  final String link;
+  final Color color;
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Container(
+          decoration: BoxDecoration(color: Colors.white, boxShadow: [
+            BoxShadow(
+                offset: const Offset(0, 10),
+                blurRadius: 20,
+                color: Colors.grey.shade300)
+          ]),
+          height: 270,
+          width: 250,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              Image(
+                height: 150,
+                image: AssetImage(link),
+                fit: BoxFit.cover,
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  text,
+                  style: const TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    'Learn More >>',
+                    style: GoogleFonts.lato(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepOrange),
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
+        Positioned(
+            top: 140,
+            right: 20,
+            child: Container(
+              height: 25,
+              width: 100,
+              decoration: BoxDecoration(color: color, boxShadow: [
+                BoxShadow(
+                    offset: const Offset(0, 10),
+                    blurRadius: 20,
+                    color: Colors.grey.shade300)
+              ]),
+              child: const Center(
+                child: Text(
+                  'Donate Now',
+                  style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
+            )),
+      ],
     );
   }
 }
