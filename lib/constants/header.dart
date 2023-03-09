@@ -9,11 +9,12 @@ Padding headerItem(String text, bool hover, bool active) {
     padding: const EdgeInsets.only(right: 25),
     child: Container(
       padding: const EdgeInsets.all(10),
-      color: hover || active ? Colors.white : Colors.transparent,
+      color: hover || active ? Colors.grey.shade300 : Colors.transparent,
       child: Text(
         text,
         style: TextStyle(
-            fontSize: 18, color: hover || active ? Colors.black : null),
+            fontSize: 18,
+            color: hover || active ? Colors.black : Colors.black87),
       ).animate().fadeIn(duration: 1000.ms, delay: 0.ms, curve: Curves.easeOut),
     ),
   );

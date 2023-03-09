@@ -23,15 +23,15 @@ class Header extends StatelessWidget {
       var width = constraints.maxWidth;
       if (width >= largeScreenSize) {
         return AppBar(
-          elevation: 0.0,
+          // elevation: 0.0,
           toolbarHeight: 100.0,
-          flexibleSpace: const Opacity(
-            opacity: 0.5,
-            child: Image(
-              image: AssetImage('assets/header-bg.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
+          // flexibleSpace: const Opacity(
+          //   opacity: 0.5,
+          //   child: Image(
+          //     image: AssetImage('assets/header-bg.jpg'),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
           actions: [
             Container(),
           ],
@@ -52,14 +52,17 @@ class Header extends StatelessWidget {
                     width: 10.0,
                   ),
                   Text('Divine Charitable Foundation Trust',
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.green))
                 ],
               ),
               Obx(() {
                 return Row(
                   children: [
                     InkWell(
+                      hoverColor: Colors.transparent,
                       onTap: () {
                         Get.rootDelegate.toNamed('/');
                       },
@@ -72,6 +75,7 @@ class Header extends StatelessWidget {
                           headerController.home),
                     ),
                     InkWell(
+                        hoverColor: Colors.transparent,
                         onTap: () {
                           Get.rootDelegate.toNamed('/about');
                         },
@@ -83,6 +87,7 @@ class Header extends StatelessWidget {
                             headerController.onHoverabout.value,
                             headerController.about)),
                     InkWell(
+                        hoverColor: Colors.transparent,
                         onTap: () {
                           Get.rootDelegate.toNamed('/cause');
                         },
@@ -94,6 +99,7 @@ class Header extends StatelessWidget {
                             headerController.onHovercause.value,
                             headerController.cause)),
                     InkWell(
+                      hoverColor: Colors.transparent,
                       onTap: () {
                         Get.rootDelegate.toNamed('/projects');
                       },
@@ -106,6 +112,7 @@ class Header extends StatelessWidget {
                           headerController.project),
                     ),
                     InkWell(
+                        hoverColor: Colors.transparent,
                         onTap: () {
                           Get.rootDelegate.toNamed('/blog');
                         },
@@ -117,6 +124,7 @@ class Header extends StatelessWidget {
                             headerController.onHoverblog.value,
                             headerController.blog)),
                     InkWell(
+                      hoverColor: Colors.transparent,
                       onTap: () {
                         Get.rootDelegate.toNamed('/contact');
                       },
@@ -155,23 +163,23 @@ class Header extends StatelessWidget {
               })
             ],
           ),
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
         );
       } else {
         return AppBar(
-          elevation: 0.0,
+          // elevation: 0.0,
           toolbarHeight: width <= mediumScreenSize && width > largeScreenSize
               ? 90.0
               : width >= smallScreenSize && width < mediumScreenSize
                   ? 70.0
                   : 60.0,
-          flexibleSpace: const Opacity(
-            opacity: 0.5,
-            child: Image(
-              image: AssetImage('assets/header-bg.jpg'),
-              fit: BoxFit.cover,
-            ),
-          ),
+          // flexibleSpace: const Opacity(
+          //   opacity: 0.5,
+          //   child: Image(
+          //     image: AssetImage('assets/header-bg.jpg'),
+          //     fit: BoxFit.cover,
+          //   ),
+          // ),
           title: Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
@@ -206,14 +214,20 @@ class Header extends StatelessWidget {
                   width >= mediumScreenSize && width < largeScreenSize
                       ? const Text('Divine Charitable Foundation Trust',
                           style: TextStyle(
-                              fontSize: 18.0, fontWeight: FontWeight.bold))
+                              fontSize: 18.0,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.green))
                       : width >= smallScreenSize && width < mediumScreenSize
                           ? const Text('Divine Charitable\nFoundation Trust',
                               style: TextStyle(
-                                  fontSize: 15.0, fontWeight: FontWeight.bold))
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green))
                           : const Text('Divine Charitable\nFoundation Trust',
                               style: TextStyle(
-                                  fontSize: 12.0, fontWeight: FontWeight.bold)),
+                                  fontSize: 12.0,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green)),
                 ],
               ),
             ],
@@ -271,12 +285,12 @@ class Header extends StatelessWidget {
                 },
                 child: const Icon(
                   Icons.menu_sharp,
-                  color: Colors.white,
+                  color: Colors.black,
                 ),
               ),
             ),
           ],
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.white,
         );
       }
     });
